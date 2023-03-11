@@ -4,7 +4,7 @@ import MainNav from './MainNav';
 export default function Layout(props) {
    return (
      <>
-      <MainNav/> <br /> 
+      <MainNav/> <br /> <br />
       <Container>
          {props.children} 
       </Container>
