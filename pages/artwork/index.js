@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import   useSWR from "swr";
 import { useEffect, useState } from "react";
-import { Card, Row, Col } from "react-bootstrap";
+import { Card, Row, Col, Pagination } from "react-bootstrap";
 import ArtworkCard from "@/components/ArtworkCard";
 
 export default function Artwork(){
@@ -13,9 +13,9 @@ export default function Artwork(){
    let finalQuery = router.asPath.split('?')[1];
 
    const { data, error } = useSWR(`https://collectionapi.metmuseum.org/public/collection/v1/search?${finalQuery}`);
-   console.log(data);
+   console.log("data in artwork/index:", data);
 
-   function previousPage(page){
+   function nextPage(page){
       if (page > 1) page++;
    }
 
@@ -42,29 +42,33 @@ export default function Artwork(){
          </>
       );
    }
-   // console.log(artworkList.length);
-
+   // console.log(artworkList.length)
    if(artworkList){
+      let artworks = artworkList[page-1];
          return(
             <>
-               <Row className="gy-4">
                {artworkList.length > 0 
-                  && 
-                  <Card>
-                     {/* {artworkList[page-1].map((item)=>(
-                        <Col lg={3} key={item.objectID}><ArtworkCard objectID={item.objectID} /></Col>
-                     ))} */}
-                     <h4>hii</h4>
-                  </Card>
-               }
+                  && (
+                     <>
+                     <Row className="gy-4">
+                        {artworks.map((objectID)=>(
+                           <Col lg={3} key={objectID}><ArtworkCard objectID={objectID} /></Col>
+                        ))}
+                     </Row>
+                     <Pagination>
+                        <Pagination.Prev onClick={previousPage(page)}/>
+                        <Pagination.Item>{page}</Pagination.Item>
+                        <Pagination.Next onClick={nextPage(page)} /> 
+                     </Pagination>
+                     </>
+               )}
                {artworkList.length == 0
-                  &&
+                  && (
                   <Card>
                   <h4>Nothing Here</h4>
                   Try searching for something else.
                   </Card>
-               }
-               </Row>
+               )}
             </>
          );
    }else{

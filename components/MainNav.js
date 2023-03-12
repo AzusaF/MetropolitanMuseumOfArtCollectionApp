@@ -6,7 +6,7 @@ import { Router, useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
+import Link from 'next/link';
 
 export default function MainNav() {
 
@@ -16,7 +16,7 @@ export default function MainNav() {
 
    function submitForm(e) {
       e.preventDefault(); // prevent the browser from automatically submitting the form
-      console.log(`form submitted - title: ${title}`);
+      // console.log(`form submitted - title: ${title}`);
       router.push(`/artwork?title=true&q=${title}`);
    }
   
@@ -24,10 +24,10 @@ export default function MainNav() {
    <>
    <Navbar bg="light" expand="lg" className='fixed-top navbar-light bg_primary'>
       <Container>
-         <Navbar.Brand>Azusa Fukuda</Navbar.Brand>
          <Nav>
-            <Nav.Link href="/" passHref legacyBehavior>Home</Nav.Link>
-            <Nav.Link href="/search" passHref legacyBehavior>Advanced Search</Nav.Link>
+            <Navbar.Brand>Azusa Fukuda</Navbar.Brand>
+            <Link passHref legacyBehavior href="/" ><Nav.Link >Home</Nav.Link></Link>
+            <Link passHref legacyBehavior href="/search" ><Nav.Link >Advanced Search</Nav.Link></Link>
          </Nav>
          <Nav>      
             <Form onSubmit={submitForm} className="d-flex">
