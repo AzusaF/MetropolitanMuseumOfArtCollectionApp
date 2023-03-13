@@ -5,8 +5,8 @@ import { Card, Row, Col, Pagination } from "react-bootstrap";
 import ArtworkCard from "@/components/ArtworkCard";
 
 export default function Artwork(){
-   const  PER_PAGE = 12;
-   const [artworkList, setArtworkList] = useState(null);
+   const PER_PAGE = 12;
+   const [artworkList, setArtworkList] = useState([]);
    const [page, setPage] = useState(1);
 
    const router = useRouter();
@@ -14,14 +14,6 @@ export default function Artwork(){
 
    const { data, error } = useSWR(`https://collectionapi.metmuseum.org/public/collection/v1/search?${finalQuery}`);
    console.log("data in artwork/index:", data);
-
-   function nextPage(page){
-      if (page > 1) page++;
-   }
-
-   function previousPage(page){
-      if (page < artworkList.length) page--;
-   }
 
    useEffect(() => {
       if([data]){
@@ -31,9 +23,20 @@ export default function Artwork(){
             results.push(chunk);
          }
          setArtworkList(results);
-         setPage(1);
       }
    }, [data]);
+
+   function nextPage(){
+      if (page > 0) {
+         setPage(page + 1);
+      }
+   }
+
+   function previousPage(){
+      if (page < artworkList.length) {
+         setPage(page - 1);
+      }
+   }
 
    if (error){
       return(
@@ -42,9 +45,10 @@ export default function Artwork(){
          </>
       );
    }
-   // console.log(artworkList.length)
+   console.log("artworkList", artworkList)
    if(artworkList){
       let artworks = artworkList[page-1];
+      console.log(artworks)
          return(
             <>
                {artworkList.length > 0 
@@ -56,9 +60,9 @@ export default function Artwork(){
                         ))}
                      </Row>
                      <Pagination>
-                        <Pagination.Prev onClick={previousPage(page)}/>
+                        <Pagination.Prev onClick={previousPage}/>
                         <Pagination.Item>{page}</Pagination.Item>
-                        <Pagination.Next onClick={nextPage(page)} /> 
+                        <Pagination.Next onClick={nextPage} /> 
                      </Pagination>
                      </>
                )}
@@ -76,7 +80,6 @@ export default function Artwork(){
          <>
          </>
       );   
-
    }
 }
 
