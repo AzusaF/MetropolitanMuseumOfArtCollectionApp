@@ -32,7 +32,6 @@ export default function ArtworkCardDetail(prop) {
    }else{
       return
       <>
-      hiii
       </>
    }
 }

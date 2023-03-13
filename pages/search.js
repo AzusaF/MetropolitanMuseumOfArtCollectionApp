@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 export default function Search() {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm({
     defaultValues: {
-      searchBy: "",
+      searchBy: "title",
       geoLocation: "",
       medium: "",
       isOnView: false,
