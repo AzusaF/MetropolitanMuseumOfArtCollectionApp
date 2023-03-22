@@ -1,10 +1,26 @@
 import useSWR from "swr";
 import Error from "next/error";
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
+import { useAtom } from "jotai";
+import { favouritesAtom } from "@/store";
+import { useState } from "react";
 
-export default function ArtworkCardDetail(prop) {
-   const objectID = prop.objectID;
-   const { data, error } = useSWR(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`);
+export default function ArtworkCardDetail(props) {
+   const objectID = props.objectID;
+   const { data, error } = useSWR(objectID ? `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`: null);
+   const [favouritesList, setFavouritesList] = useAtom(favouritesAtom);
+   let showAdded = favouritesList.includes(props.objectID);
+   
+   function favouritesClicked(){
+      if(showAdded){
+         setFavouritesList(current => current.filter(fav => fav != objectID));
+         showAdded = false;
+      }else{
+         setFavouritesList(current => [...current, objectID]);
+         showAdded = true;
+      }
+   }
+
 
    if(error){
       return (
@@ -24,6 +40,8 @@ export default function ArtworkCardDetail(prop) {
                   <Card.Text>
                      {data.objectDate && data.classification && data.medium ?  <>{data.objectDate} {data.classification} {data.medium}<br/><br/>
                      {data.artistDisplayName} {data.artistWikidata_URL ? (<a href={data.artistWikidata_URL} target="_blank" rel="noreferrer" >wiki</a>) :""} {data.creditLine} {data.dimensions}</> :"N/A"}
+                     <br/><br/>
+                     <Button variant={showAdded?"primary":"outline-primary"} onClick={()=>{favouritesClicked()}}>{showAdded?"+ Favourite (added)":"+ Favourite"}</Button>                
                   </Card.Text>
                </Card.Body>
             </Card>

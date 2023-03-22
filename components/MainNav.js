@@ -17,7 +17,6 @@ export default function MainNav() {
 
    function submitForm(e) {
       e.preventDefault(); // prevent the browser from automatically submitting the form
-      // console.log(`form submitted - title: ${title}`);
       router.push(`/artwork?title=true&q=${title}`);
       setIsExpanded(false);
    }
