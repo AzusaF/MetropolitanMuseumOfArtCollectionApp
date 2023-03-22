@@ -7,6 +7,8 @@ import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 
 export default function MainNav() {
 
@@ -46,6 +48,12 @@ export default function MainNav() {
                <Button variant="outline-success" type="submit" >Search</Button>
                </Form>
                &nbsp;
+               <Nav>
+                  <NavDropdown title="User Name" id="basic-nav-dropdown">
+                  <Link passHref legacyBehavior href="/favourites"><NavDropdown.Item onClick={()=>setIsExpanded()}>Favourites</NavDropdown.Item></Link>
+                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                  </NavDropdown>
+               </Nav>
             </Nav>
          </Navbar.Collapse>
       </Container>
