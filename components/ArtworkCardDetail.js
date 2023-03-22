@@ -9,22 +9,15 @@ export default function ArtworkCardDetail(props) {
    const objectID = props.objectID;
    const { data, error } = useSWR(objectID ? `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`: null);
    const [favouritesList, setFavouritesList] = useAtom(favouritesAtom);
-   const [showAdded, setShowAdded] = useState(favouritesList.includes(props.objectID))
-   
-   console.log("showAdded", favouritesList.includes(props.objectID));
-
+   const [showAdded, setShowAdded] = useState(favouritesList.includes(props.objectID));
 
    function favouritesClicked(){
       if(showAdded){
-         console.log("fav in true 1", favouritesList);
          setFavouritesList(current => current.filter(fav => fav != objectID));
          setShowAdded(false);
-         console.log("fav in true 2", favouritesList);
       }else{
-         console.log("fav in false 1", favouritesList);
          setFavouritesList(current => [...current, objectID]);
          setShowAdded(true);
-         console.log("fav in false 2", favouritesList);
       }
    }
 
