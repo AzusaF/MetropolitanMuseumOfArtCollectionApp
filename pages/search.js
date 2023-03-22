@@ -1,6 +1,8 @@
 import { Form, Col, Row, Button } from "react-bootstrap"
 import { appendErrors, useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
+import { useAtom } from "jotai";
+import { searchHistoryAtom } from "@/store";
 
 export default function Search() {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm({
@@ -14,10 +16,13 @@ export default function Search() {
     }
   });
   const router = useRouter();
+  const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom);
 
   function submitForm(data) {
     let queryString = `${data.searchBy}=true&geoLocation=${data.geoLocation}&medium=${data.medium}&isOnView=${data.isOnView}&isHighlight=${data.isHighlight}&q=${data.q}`;
     router.push(`/artwork?${queryString}`);
+    setSearchHistory(current => [...current, queryString]);
+    console.log("setSearch in search", searchHistory);
   }
 
   return (

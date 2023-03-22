@@ -14,7 +14,6 @@ export default function Artwork(){
    let finalQuery = router.asPath.split('?')[1];
 
    const { data, error } = useSWR(`https://collectionapi.metmuseum.org/public/collection/v1/search?${finalQuery}`);
-   console.log("data in artwork/index:", data);
 
    useEffect(() => {
       if([data]){
@@ -71,8 +70,8 @@ export default function Artwork(){
                {artworkList.length == 0
                   && (
                   <Card>
-                  <h4>Nothing Here</h4>
-                  Try searching for something else.
+                     <h4>Nothing Here</h4>
+                     Try searching for something else.
                   </Card>
                )}
             </>

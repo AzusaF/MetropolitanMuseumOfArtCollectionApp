@@ -16,7 +16,7 @@ export default function ArtworkCard(prop) {
          </>
        );
    }
-   console.log("data in ArtworkCard: ", data)
+
    if(data){
       return (
          <>
