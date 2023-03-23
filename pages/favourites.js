@@ -23,7 +23,7 @@ export default function Favourites(){
                   && (
                   <Card>
                      <h4>Nothing Here</h4>
-                     Try searching for something else.
+                     Try adding some new artwork to the list.
                   </Card>
                )}
             </>

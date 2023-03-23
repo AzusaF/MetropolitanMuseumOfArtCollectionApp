@@ -36,8 +36,8 @@ export default function MainNav() {
          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={()=> setIsExpanded(!isExpanded)} />
          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-               <Link passHref legacyBehavior active={router.pathname === "/"} href="/" ><Nav.Link onClick={()=>setIsExpanded(false)}>Home</Nav.Link></Link>
-               <Link passHref legacyBehavior active={router.pathname === "/search"} href="/search" ><Nav.Link onClick={()=> setIsExpanded(false)}>Advanced Search</Nav.Link></Link>
+               <Link passHref legacyBehavior href="/" ><Nav.Link active={router.pathname === "/"} onClick={()=>setIsExpanded(false)}>Home</Nav.Link></Link>
+               <Link passHref legacyBehavior href="/search" ><Nav.Link active={router.pathname === "/search"} onClick={()=> setIsExpanded(false)}>Advanced Search</Nav.Link></Link>
             </Nav>
             <Nav>
                &nbsp;  
@@ -55,8 +55,8 @@ export default function MainNav() {
                &nbsp;
                <Nav>
                   <NavDropdown title="User Name" id="basic-nav-dropdown">
-                  <Link passHref legacyBehavior active={router.pathname === "/favourites"} href="/favourites"><NavDropdown.Item onClick={()=>setIsExpanded(false)}>Favourites</NavDropdown.Item></Link>
-                  <Link passHref legacyBehavior active={router.pathname === "/history"} href="/history"><NavDropdown.Item onClick={()=>setIsExpanded(false)}>Search History</NavDropdown.Item></Link>
+                  <Link passHref legacyBehavior href="/favourites"><NavDropdown.Item active={router.pathname === "/favourites"} onClick={()=>setIsExpanded(false)}>Favourites</NavDropdown.Item></Link>
+                  <Link passHref legacyBehavior href="/history"><NavDropdown.Item active={router.pathname === "/history"} onClick={()=>setIsExpanded(false)}>Search History</NavDropdown.Item></Link>
                   </NavDropdown>
                </Nav>
             </Nav>

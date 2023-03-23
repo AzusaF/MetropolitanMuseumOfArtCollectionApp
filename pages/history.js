@@ -29,7 +29,7 @@ export default function History(){
       });
    }
    
-   if(!parsedHistory){
+   if(parsedHistory.length == 0){
       return(
          <>
             <Card>
