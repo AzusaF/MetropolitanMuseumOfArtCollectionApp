@@ -9,6 +9,7 @@ import Link from 'next/link';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { searchHistoryAtom } from '@/store';
 import { useAtom } from 'jotai';
+import { addToHistory } from '@/lib/userData';
 
 
 export default function MainNav() {
@@ -19,12 +20,11 @@ export default function MainNav() {
    const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom);
 
 
-   function submitForm(e) {
+   async function submitForm(e) {
       e.preventDefault(); // prevent the browser from automatically submitting the form
       router.push(`/artwork?title=true&q=${title}`);
-      let queryString = `title=true&q=${title}`
       setIsExpanded(false);
-      setSearchHistory(current => [...current, queryString]);
+      setSearchHistory(await addToHistory(`title=true&q=${title}`));
       console.log("setSearch in MainNav", searchHistory);
    }
   
