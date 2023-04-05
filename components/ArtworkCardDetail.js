@@ -3,7 +3,7 @@ import Error from "next/error";
 import { Button, Card } from "react-bootstrap";
 import { useAtom } from "jotai";
 import { favouritesAtom } from "@/store";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { addToFavourites, removeFromFavourites } from "@/lib/userData";
 
 export default function ArtworkCardDetail(props) {
