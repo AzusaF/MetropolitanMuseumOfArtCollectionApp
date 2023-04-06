@@ -29,6 +29,9 @@ export default function Favourites(){
             </>
          );
    }else{
-      return null;
+      return (
+         <>
+         </>
+      );
    }
 }

@@ -5,7 +5,7 @@ import { favouritesAtom, searchHistoryAtom } from '@/store';
 import { useAtom } from 'jotai';
 import { getHistory, getFavourites } from '@/lib/userData';
 
-const PUBLIC_PATHS = ['/login', '/', '/_error, /register'];
+const PUBLIC_PATHS = ['/login', '/', '/_error', '/register'];
 
 export default function RouteGuard(props) {
    const router = useRouter();
@@ -16,6 +16,7 @@ export default function RouteGuard(props) {
    async function updateAtoms(){
       setFavouritesList(await getFavourites());
       setSearchHistory(await getHistory());
+      console.log("set atom values");
    }
 
    useEffect(() => {
