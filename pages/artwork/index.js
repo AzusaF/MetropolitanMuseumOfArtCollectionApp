@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Card, Row, Col, Pagination } from "react-bootstrap";
 import ArtworkCard from "@/components/ArtworkCard";
 import validObjectIDList from "@/public/data/validObjectIDList.json";
+import Error from "next/error";
 
 export default function Artwork(){
    const PER_PAGE = 12;
