@@ -23,9 +23,7 @@ export default function Login(props){
 
    function handleSubmit(e){
       e.preventDefault();
-      // console.log(userName, password);
       authenticateUser(userName,password).then(async()=>{
-      // console.log("valid user")
          await updateAtoms();
          router.push("/favourites")
       }).catch(err=>{
