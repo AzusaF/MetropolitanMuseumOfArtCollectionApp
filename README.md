@@ -4,21 +4,21 @@
 This is a web application which allows you to search collection in Metropolitan Museum of Art. The app also allows you to save your favourite artworks and the history of what you searched.
 
 ## Key Features
-React app implemented in Next.js 
-Used MongoDB database to store the user data
-The collection is accessible only when user is authenticated
-The history and favourite data are stored using Jotai
-Password stored as hashed passwords using Bcrypt.js
-Used Bootstrap to style the app    
+- React app implemented in Next.js 
+- Used MongoDB database to store the user data
+- The collection is accessible only when user is authenticated
+- The history and favourite data are stored using Jotai
+- Password stored as hashed passwords using Bcrypt.js
+- Used Bootstrap to style the app    
 
 
 ## Main Frameworks/Libraries used
-React / Next.js
-Jotai
-JSON Web Tokens (JWT)
-MongoDB
-Bcrypt.js
-React Bootstrap   
+- React / Next.js
+- Jotai
+- JSON Web Tokens (JWT)
+- MongoDB
+- Bcrypt.js
+- React Bootstrap   
 
 ## Try the app
 
