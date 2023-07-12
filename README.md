@@ -5,7 +5,7 @@ This is a web application which allows you to search collection in Metropolitan 
 
 ## Key Features
 - React app implemented in Next.js 
-- Used MongoDB database to store the user data
+- Used MongoDB database to store the user data and its activity like history and favourite
 - The collection is accessible only when user is authenticated
 - The history and favourite data are stored using Jotai
 - Password stored as hashed passwords using Bcrypt.js
