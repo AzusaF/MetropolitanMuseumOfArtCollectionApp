@@ -39,7 +39,7 @@ export default function MainNav() {
    <>
    <Navbar expanded={isExpanded} bg="light" expand="lg" className='fixed-top navbar-light bg_primary'>
       <Container>
-         <Navbar.Brand>Azusa Fukuda</Navbar.Brand>
+         <Navbar.Brand>Metropolitan Museum of Art Collection</Navbar.Brand>
          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={()=> setIsExpanded(!isExpanded)} />
          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
