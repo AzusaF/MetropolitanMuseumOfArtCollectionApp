@@ -22,6 +22,8 @@ This is a web application which allows you to search collection in Metropolitan 
 
 ## Try the app
 https://metropolitan-museum-of-art-collection-app.vercel.app/
+| userID | password |
+| test_user | test |
 
 https://github.com/AzusaF/MetropolitanMuseumOfArtCollectionApp/assets/95828247/55931107-ea9a-45e8-8d2b-3599e46a9c9a
 
