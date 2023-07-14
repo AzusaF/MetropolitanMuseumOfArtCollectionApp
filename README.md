@@ -29,7 +29,7 @@ https://metropolitan-museum-of-art-collection-app.vercel.app/
 https://github.com/AzusaF/MetropolitanMuseumOfArtCollectionApp/assets/95828247/55931107-ea9a-45e8-8d2b-3599e46a9c9a
 
 
---
+---
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
