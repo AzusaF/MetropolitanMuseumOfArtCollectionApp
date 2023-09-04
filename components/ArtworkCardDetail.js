@@ -51,9 +51,5 @@ export default function ArtworkCardDetail(props) {
             </Card>
          </>
        );
-   }else{
-      return
-      <>
-      </>
    }
 }
