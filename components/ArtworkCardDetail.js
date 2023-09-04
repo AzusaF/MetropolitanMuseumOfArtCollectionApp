@@ -33,8 +33,7 @@ export default function ArtworkCardDetail(props) {
             <Error statusCode={404} />
          </>
        );
-   }
-   if(data){
+   } else if(data){
       return (
          <>
             <Card>
