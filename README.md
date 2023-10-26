@@ -1,14 +1,14 @@
 # Metropolitan Museum of Art Collection App
 
 ## About
-This is a web application which allows you to search collection in Metropolitan Museum of Art. The app also allows you to save your favourite artworks and the history of what you searched.
+This web application allows you to search collections in the Metropolitan Museum of Art. The app also allows you to save your favourite artwork and the history of what you searched.
 
 ## Key Features
-- React app implemented in Next.js 
-- Used MongoDB database to store the user data and its activity like history and favourite
-- The collection is accessible only when user is authenticated
-- The history and favourite data are stored using Jotai
-- Password stored as hashed passwords using Bcrypt.js
+- React app implemented in Next.js  
+- Used MongoDB database to store the user data and its activity like history and favourite  
+- The collection is accessible only when the user is authenticated   
+- The history and favourite data are stored using Jotai  
+- Password stored as hashed passwords using Bcrypt.js  
 - Used Bootstrap to style the app    
 
 
