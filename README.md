@@ -1,7 +1,7 @@
 # Metropolitan Museum of Art Collection App
 
 ## About
-This web application allows you to search collections in the Metropolitan Museum of Art. The app also allows you to save your favourite artwork and the history of what you searched.
+This web application allows you to search collections in the Metropolitan Museum of Art. The app allows you to save your favourite artwork and the history of what you searched. User data is managed in [user-API app](https://github.com/AzusaF/user-api).
 
 ## Key Features
 - React app implemented in Next.js  
@@ -9,8 +9,8 @@ This web application allows you to search collections in the Metropolitan Museum
 - The collection is accessible only when the user is authenticated   
 - The history and favourite data are stored using Jotai  
 - Password stored as hashed passwords using Bcrypt.js  
-- Used Bootstrap to style the app    
-
+- Used Bootstrap to style the app   
+- Developed an app deployed on cyclic using RESTful API (CRUD) to manage user data  
 
 ## Main Frameworks/Libraries used
 - React / Next.js
