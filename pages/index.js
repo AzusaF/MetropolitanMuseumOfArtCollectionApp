@@ -1,13 +1,3 @@
-
-/*********************************************************************************
-* WEB422 – Assignment 6
-* I declare that this assignment is my own work in accordance with Seneca Academic Policy.
-* No part of this assignment has been copied manually or electronically from any other source
-* (including web sites) or distributed to other students. 
-* Name: __Azusa_Fukuda__ Student ID: ___109697219___ Date: __April 6th 2023__ 
-* Vercel App (Deployed) Link: __https://metropolitan-museum-of-art-collection-app.vercel.app/_
-********************************************************************************/
-
 import Link from "next/link";
 import { Card, Row, Col } from "react-bootstrap";
 
